@@ -22,9 +22,16 @@ p {
 img {
   display: block;
 }
+
 a {
   text-decoration: none;
 }
+.container {
+  width: 1158px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+/* header */
 .top-line {
   background-color: #fff;
   border-bottom: 1px solid #e7e9fc;
@@ -32,11 +39,7 @@ a {
 .top-page {
   display: flex;
 }
-.container {
-  width: 1158px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
+
 .navigation {
   display: flex;
   align-items: center;
@@ -85,6 +88,17 @@ a {
 .link-nav:focus {
   color: #404bbf;
 }
+.link-nav::after {
+  display: block;
+  content: "";
+  width: 48px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #fff;
+}
+.link-nav:hover::after {
+  background-color: #404bbf;
+}
 .top-line-ad {
   display: flex;
   align-items: center;
@@ -108,9 +122,18 @@ a {
   gap: 40px;
   margin: auto;
 }
+/* section hero */
 .page-hero {
   background-color: #2e2f42;
   padding: 188px 0;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/people-office.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1440px;
 }
 .title {
   color: #ffffff;
@@ -148,9 +171,17 @@ a {
 .btn:focus {
   background-color: #404bbf;
 }
+/* section offers */
 .offers {
   background-color: #fff;
   padding: 120px 0;
+}
+.icons-offers {
+  width: 264px;
+  height: 112px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  border: 1px solid #8e8f99;
 }
 .title-offers {
   text-align: center;
@@ -160,6 +191,18 @@ a {
   line-height: 1.11;
   letter-spacing: 0.72px;
   text-transform: capitalize;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 .list-offers {
   display: flex;
@@ -176,20 +219,12 @@ a {
   letter-spacing: 0.4px;
   margin-bottom: 8px;
 }
-.subtitle-team {
-  text-align: center;
-  color: #2e2f42;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: 0.4px;
-  margin-bottom: 8px;
-}
 .text {
   font-size: 16px;
   letter-spacing: 0.32px;
   line-height: 1.5;
 }
+/* section team */
 .team {
   background-color: #f4f4fd;
   padding: 120px 0;
@@ -212,16 +247,31 @@ a {
   background-color: #ffffff;
   width: calc((100% - 3 * 24px) / 4);
   border-radius: 0px 0px 4px 4px;
+
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 .prof {
   padding: 32px 0;
 }
+.subtitle-team {
+  text-align: center;
+  color: #2e2f42;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.4px;
+  margin-bottom: 8px;
+}
+
 .text-team {
   font-size: 16px;
   letter-spacing: 0.32px;
   line-height: 1.5;
   text-align: center;
 }
+/* section portfolio */
 .portfolio {
   background-color: #ffffff;
   padding: 120px 0 120px 0;
@@ -240,9 +290,21 @@ a {
   border: 1px solid #e7e9fc;
   border-top: none;
 }
+/* footer */
 .footer-page {
   background-color: #2e2f42;
   padding: 100px 0;
+}
+.logo-web {
+  color: #4d5ae5;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.17;
+  letter-spacing: 0.54px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 16px;
 }
 .logo-std {
   color: #f4f4fd;
@@ -259,26 +321,37 @@ a {
   line-height: 1.5;
   max-width: 264px;
 }
-.logo-web {
-  color: #4d5ae5;
-  font-family: "Raleway", sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.17;
-  letter-spacing: 0.54px;
-  text-transform: uppercase;
-  display: inline-block;
-  margin-bottom: 16px;
+
+.text-social {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.32px;
 }
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
+
+.portfolio-item {
+  border: 1px solid #212121;
+  border-radius: 4px;
+  position: relative;
   overflow: hidden;
+}
+.portfolio-item:hover .overlay {
+  transform: translateY(0);
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 120px;
+  width: 360px;
+  height: 300px;
+  padding: 40px 32px 0;
+  background-color: #4d5ae5;
+  color: #f4f4fd;
+  font-size: 16px;
+  letter-spacing: 0.32px;
+  line-height: 1.5;
+  transform: translateY(-300px);
+  transition: transform 250ms ease-in-out;
 }
