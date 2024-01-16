@@ -76,7 +76,7 @@ a {
   color: #404bbf;
 }
 .link-nav {
-  color: #2e2f42;
+  color: #404bbf;
   display: flex;
   font-size: 16px;
   font-weight: 500;
@@ -84,6 +84,8 @@ a {
   line-height: 1.5;
   padding: 24px 0;
   display: block;
+  position: relative;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link-nav:hover {
   color: #404bbf;
@@ -103,6 +105,7 @@ a {
   width: 48px;
   height: 4px;
   border-radius: 2px;
+  background-color: #404bbf;
 }
 .link-nav:hover::after {
   background-color: #404bbf;
@@ -118,7 +121,6 @@ a {
   letter-spacing: 0.32px;
   line-height: 1.5;
   padding: 24px 0;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link-ad:hover {
   color: #404bbf;
@@ -299,6 +301,7 @@ a {
 .item-social-icons {
   width: 40px;
   height: 40px;
+  background-color: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link {
   width: 100%;
@@ -332,6 +335,7 @@ a {
 .portfolio-item {
   width: calc((100% - 48px) / 3);
   box-shadow: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-item:hover {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
@@ -419,6 +423,7 @@ a {
 .social-item {
   width: 40px;
   height: 40px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link-footer {
   width: 100%;
